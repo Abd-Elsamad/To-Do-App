@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container{
+    width: 100%;
+    max-width: 550px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.container h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.input-box{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.task-input{
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.9);
+    transition: 0.3s ease;
+}
+
+.task-input:focus{
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.add-btn{
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #00c896;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover{
+    background: #00b386;
+    transform: translateY(-2px);
+}
+
+.add-btn:active{
+    transform: scale(0.95);
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* شكل التاسك */
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.95);
+    padding: 15px 18px;
+    border-radius: 12px;
+    animation: fadeIn 0.4s ease;
+}
+
+.task span{
+    font-size: 1rem;
+    color: #333;
+    word-break: break-word;
+}
+
+.task.completed span{
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* أزرار التحكم */
+.task-actions{
+    display: flex;
+    gap: 8px;
+}
+
+.complete-btn,
+.delete-btn{
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+.complete-btn{
+    background: #3498db;
+}
+
+.complete-btn:hover{
+    background: #2980b9;
+}
+
+.delete-btn{
+    background: #e74c3c;
+}
+
+.delete-btn:hover{
+    background: #c0392b;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width: 600px){
+
+    .container{
+        padding: 20px;
+    }
+
+    .input-box{
+        flex-direction: column;
+    }
+
+    .add-btn{
+        width: 100%;
+    }
+
+}
